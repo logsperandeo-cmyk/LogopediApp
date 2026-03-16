@@ -5,14 +5,99 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { BookOpen, Calculator, Hash, Pencil, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+const AbcIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fontSize="12" fontWeight="bold" fontFamily="system-ui, sans-serif" fill="currentColor" stroke="none">abc</text>
+  </svg>
+);
+
+const MathSignsIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    {/* Plus */}
+    <line x1="4" y1="7" x2="10" y2="7" />
+    <line x1="7" y1="4" x2="7" y2="10" />
+    
+    {/* Minus */}
+    <line x1="14" y1="7" x2="20" y2="7" />
+    
+    {/* Multiply */}
+    <line x1="4" y1="14" x2="10" y2="20" />
+    <line x1="4" y1="20" x2="10" y2="14" />
+    
+    {/* Divide */}
+    <line x1="14" y1="17" x2="20" y2="17" />
+    <circle cx="17" cy="13" r="1.5" fill="currentColor" stroke="none" />
+    <circle cx="17" cy="21" r="1.5" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const BookNumbersIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <g stroke="none" fill="currentColor" fontFamily="system-ui, sans-serif" fontWeight="bold">
+      <text x="4" y="9" fontSize="5" transform="rotate(-15 4 9)">3</text>
+      <text x="8" y="12" fontSize="6" transform="rotate(10 8 12)">7</text>
+      <text x="3.5" y="16" fontSize="4.5" transform="rotate(-5 3.5 16)">1</text>
+      <text x="7.5" y="18" fontSize="5" transform="rotate(20 7.5 18)">4</text>
+      <text x="15" y="10" fontSize="5.5" transform="rotate(-10 15 10)">8</text>
+      <text x="19" y="13" fontSize="5" transform="rotate(15 19 13)">5</text>
+      <text x="14.5" y="17" fontSize="6" transform="rotate(-20 14.5 17)">2</text>
+    </g>
+  </svg>
+);
+
+const DotsIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <circle cx="6" cy="6" r="2" fill="currentColor" stroke="none" />
+    <circle cx="16" cy="7" r="5" fill="currentColor" stroke="none" />
+    <circle cx="8" cy="16" r="3.5" fill="currentColor" stroke="none" />
+    <circle cx="17" cy="17" r="1.5" fill="currentColor" stroke="none" />
+  </svg>
+);
 
 const apps = [
   {
     id: 'letto-scrittura-numeri',
     title: 'Letto-scrittura numeri',
     description: 'Esercizi mirati per migliorare la lettura e la scrittura dei numeri.',
-    icon: BookOpen,
+    icon: BookNumbersIcon,
     href: 'https://lettoscritturanumeri.netlify.app/',
     color: 'text-[#1877F2]',
     bgColor: 'bg-[#1877F2]/10',
@@ -21,7 +106,7 @@ const apps = [
     id: 'area-del-calcolo',
     title: 'Area del calcolo',
     description: 'Attività interattive per il potenziamento delle abilità di calcolo mentale e scritto.',
-    icon: Calculator,
+    icon: MathSignsIcon,
     href: 'https://areadelcalcolo.netlify.app/',
     color: 'text-emerald-600',
     bgColor: 'bg-emerald-50',
@@ -30,7 +115,7 @@ const apps = [
     id: 'senso-del-numero',
     title: 'Senso del numero',
     description: 'Giochi e strumenti per sviluppare la comprensione profonda della quantità.',
-    icon: Hash,
+    icon: DotsIcon,
     href: 'https://matematicasensodelnumero.netlify.app/',
     color: 'text-amber-600',
     bgColor: 'bg-amber-50',
@@ -39,7 +124,7 @@ const apps = [
     id: 'scrittura-facile',
     title: 'Scrittura facile',
     description: 'Supporti e facilitatori per rendere il processo di scrittura più accessibile.',
-    icon: Pencil,
+    icon: AbcIcon,
     href: 'https://scritturacorretta.netlify.app/',
     color: 'text-[#1877F2]',
     bgColor: 'bg-[#1877F2]/10',
@@ -119,7 +204,7 @@ export default function App() {
             © {new Date().getFullYear()} LogopediApp. Tutti i diritti riservati.
           </p>
           <p className="text-slate-400 text-sm mt-4 sm:mt-0">
-            Progettato per la riabilitazione
+            Progettato per la riabilitazione dal Dott. Domenico Sperandeo
           </p>
         </div>
       </footer>
