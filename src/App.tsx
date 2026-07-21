@@ -92,6 +92,26 @@ const DotsIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const SpellingIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    {/* Pen/Pencil */}
+    <path d="M14.5 2.5a2.12 2.12 0 0 1 3 3L7 16l-4 1 1-4Z" />
+    <path d="m12.5 4.5 3 3" />
+    
+    {/* Checkmark (Spunta) */}
+    <path d="m14 16 3 3 5-5" />
+  </svg>
+);
+
 const apps = [
   {
     id: 'letto-scrittura-numeri',
@@ -128,6 +148,15 @@ const apps = [
     href: 'https://scritturacorretta.netlify.app/',
     color: 'text-[#1877F2]',
     bgColor: 'bg-[#1877F2]/10',
+  },
+  {
+    id: 'ortografia',
+    title: 'Ortografia',
+    description: 'Esercizi mirati e divertenti per l\'apprendimento delle regole ortografiche e della corretta grafia.',
+    icon: SpellingIcon,
+    href: 'https://logografia.netlify.app',
+    color: 'text-green-600',
+    bgColor: 'bg-green-50',
   },
 ];
 
@@ -168,7 +197,7 @@ export default function App() {
         </div>
 
         {/* Apps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12">
           {apps.map((app, index) => {
             const Icon = app.icon;
             return (
